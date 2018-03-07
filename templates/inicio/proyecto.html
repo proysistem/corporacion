@@ -1,0 +1,90 @@
+{% extends 'base/base_main.html' %}
+
+{% block title %} Home {% endblock title %}</title>
+
+{% block context%}
+			<section class="fondo_page">
+				<article class="back_slide group">
+					<div class="group_column width_050">
+						<div class="group_column width_015">
+							<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							<a href="{% url 'inicio:propuesta' %}"><img class="align_itm_right" src="static/images/enter.jpg"></a>
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+						<div><img class="align_itm_right" src="static/images/atencion.png"></div>
+						<div class="group">
+							<div class="group_orizont-1"><img src="static/images/importante.png"><a href="{% url 'eventos:ast_new' %}"><img src="static/images/opcional.jpg"></a></div>
+							<div class="group_orizont-2"><a href="{% url 'visitantes:sol_new' %}"><img src="static/images/pulse.png"></a></div>
+							<div class="group_orizont-1"><img src="static/images/cuenta.jpg"></div>
+						</div>
+					</div>
+					<div class="group_column width_050">
+						<div><h1>Calendario de exposiciones del proyecto</h1></div>
+						<table border="1" >
+							<thead>
+							 	<tr>
+							 		<th class="color_780827">Fecha del evento</th>
+							 		<th class="color_780827">Hora del evento</th>
+							 		<th class="color_780827"> Ciudad </th>
+							 		<th class="color_780827">Dirección</th>
+							 		<th class="color_780827">Nombre del local</th>
+							 		<th class="color_780827">Asistieron</th>
+							 		<th class="color_780827">Status</th>
+							 	</tr>
+							</thead>
+							<tbody border="0">
+							 	{% if object_list %}
+							 	{% for var_evnfield in object_list %}
+							 	<tr>
+									<td class="columns_tab">{{ var_evnfield.evn_fechaev }} </td>
+									<td class="columns_tab">{{ var_evnfield.evn_horaevn }} </td>
+									<td class="columns_tab">{{ var_evnfield.evn_zipcode }} </td>
+									<td class="columns_tab">{{ var_evnfield.evn_direcci }} </td>
+									<td class="columns_tab">{{ var_evnfield.evn_localid }} </td>
+									<td class="columns_tab">{{ var_evnfield.evn_asisten }} </td>
+									<td class="columns_tab">{{ var_evnfield.evn_pendien }} </td>
+								</tr>
+								{% endfor %}
+								{% else %}
+								<h4> No hay registros en Eventos </h4>
+								{% endif %}
+							</tbody>
+						</table>
+						<div class="page_content">
+							<ul class="pager_botons">
+								<li>
+									{% if page_obj.has_previous %}
+									<a class="icon-left-open pager_prev" href="?page={{page_obj.previous_page_number}}">Previous</a>
+									{% endif %}
+								</li>
+								<li>
+									{% if page_obj.has_next %}
+									<a class="pager_next" href="?page={{page_obj.next_page_number}}">Next <span class="icon-right-open"></span></a>
+									{% endif %}
+								</li>
+							</ul>
+						</div>
+					</div>
+				</article>
+			</section>
+{% endblock context %}
+
+{% block js %}
+	<script type="text/javascript">
+
+	function empleo(){
+		alert("Sobresaturado..!!");
+	}
+		function propio(){
+		alert("No tenemos disponible..!!");
+	}
+		function finanza(){
+		alert("Seguir un curso de finanzas..!!");
+	}
+	</script>
+{% endblock js %}
