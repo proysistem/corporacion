@@ -1,0 +1,54 @@
+/*------------------------ Estilos del Info ----------------------- */
+
+.proyecto_content
+	{
+	background: url(/static/images/pixel-2.png);
+	display: ruby-base-container;
+	margin-top: 170px;
+	}
+.proyecto_subcont
+	{
+	background-color: rgba(9,13,19,0.9); /* Standard syntax */
+	border: 1px solid rgba(255,255,255,0.9);
+	color: #FFF;
+	margin: 160px 0 45px 0;
+	position: relative;
+	width: 100%;
+	}
+.proyecto_columns
+	{
+	border: 1px solid rgba(255,255,255,0.9);
+	width: 100%;
+  	padding: 10px;
+    }
+.proyecto_colitms
+	{
+	margin: 25px auto;
+	padding: 15px;
+/*	justify-content: space-between;*/
+	}
+.proyecto-titulo
+	{
+	color:#FFF;
+	font-size: 2em;
+	margin: 20px auto;
+	padding: 5px;
+	text-align: center;
+	}
+.proyecto_imgcont
+	{
+	display: flex;
+	background: url(/static/images/pixel-2.png);
+	position: relative;
+	}
+.proyecto_imgitms
+	{
+	display: block;
+	justify-content: space-between;
+	background-color: linear-gradient(#C5C7C7, #F9F392); /* Standard syntax */
+	}
+.proyecto_image
+	{
+	width: 99%;
+	margin: auto;
+	}

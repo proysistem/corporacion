@@ -64,12 +64,15 @@ class MensajeForm(forms.ModelForm):
 
 
 class EventoForm(forms.ModelForm):
-
+    evn_fechaev = forms.DateField(
+        initial=localtime(now()).date(),
+        widget=forms.DateInput(attrs={"type": "date"}, format='%Y-%m-%d',)
+    )
     class Meta:
         model = Evento
 
         fields = [
-                'evn_fechaev',
+                # 'evn_fechaev',
                 'evn_horaevn',
                 'evn_zipcode',
                 'evn_direcci',
@@ -78,7 +81,7 @@ class EventoForm(forms.ModelForm):
                 'evn_pendien',
                 ]
         labels = {
-                'evn_fechaev': 'Fecha del evento',
+                # 'evn_fechaev': 'Fecha del evento',
                 'evn_horaevn': 'Hora del evento',
                 'evn_zipcode': 'Lugar (zip-code)',
                 'evn_direcci': 'Dirección',
@@ -87,7 +90,7 @@ class EventoForm(forms.ModelForm):
                 'evn_pendien': 'Pendiente(si/no)',
                 }
         widgets = {
-                'evn_fechaev': forms.DateInput(),
+                # 'evn_fechaev': forms.DateInput(),
                 'evn_fechaev': forms.TimeInput(),
                 'evn_zipcode': forms.TextInput(),
                 'evn_direcci': forms.TextInput(),
